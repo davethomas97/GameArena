@@ -4,6 +4,8 @@ public class Fruit
 	private double yPosition;
 	private double size;
 	private String colour = "RED";
+	private double randomXPos;
+	private double randomYPos;
 	
 	public double getXPosition()
 	{
@@ -21,9 +23,22 @@ public class Fruit
 	{
 		yPosition = y;
 	}
-	public double randomPosition()
+	public void randomXPosition()
 	{
-		return Math.random()*500;
+		randomXPos = (double)Math.random()*500;
+	}
+	public void randomYPosition()
+	{
+		randomYPos = (double)Math.random()*500;
+	}
+	public void move()
+	{
+		xPosition = randomXPos;
+		yPosition = randomYPos;
+	}
+	public void addTo(GameArena arenaName)
+	{
+		
 	}
 	public Fruit(double x, double y, double diameter, String col)
 	{
