@@ -1,11 +1,9 @@
 public class Fruit
 {
-	private double xPosition;
-	private double yPosition;
-	private double size;
-	private String colour = "RED";
-	private double randomXPos;
-	private double randomYPos;
+	private double xPosition;				// The x co-ordinate of the fruit
+	private double yPosition;				// The y co-ordinate of the fruit
+	private double size;					// Size of the fruit
+	private String colour = "RED";			// Fruit colour
 	
 	public double getXPosition()
 	{
@@ -23,23 +21,21 @@ public class Fruit
 	{
 		yPosition = y;
 	}
-	public void randomXPosition()
-	{
-		randomXPos = (double)Math.random()*500;
-	}
-	public void randomYPosition()
-	{
-		randomYPos = (double)Math.random()*500;
-	}
+
 	public void move()
 	{
-		xPosition = randomXPos;
-		yPosition = randomYPos;
+		xPosition = (double)Math.random()*500;
+		yPosition = (double)Math.random()*500;
+	}
+	public boolean fruitEaten()
+	{
+		return (Math.abs(xPosition - Snake.getXPosition()) < 20 && Math.abs(yPosition - Snake.getYPosition()) < 20);
 	}
 	public void addTo(GameArena arenaName)
 	{
 		
 	}
+	
 	public Fruit(double x, double y, double diameter, String col)
 	{
 		xPosition = x;
